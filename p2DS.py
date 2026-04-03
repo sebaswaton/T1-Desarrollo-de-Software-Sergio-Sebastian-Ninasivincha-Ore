@@ -31,7 +31,6 @@ def resolver():
             socio = terminal_a_socio[t]
             clientes_por_socio[socio][c] += 1
 
-    # Resultado
     for socio in range(1, N + 1):
         if not clientes_por_socio[socio]:
             print(socio, -1)
