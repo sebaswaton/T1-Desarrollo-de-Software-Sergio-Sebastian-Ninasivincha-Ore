@@ -18,7 +18,7 @@ Coloca estos archivos en el **mismo directorio** que `p1DS.py` y `p2DS.py` (o aj
 
 ---
 
-## 1) Simulador de enrutamiento (SPA Router) — `p1DS.py`
+## 1) Simulador de enrutamiento — `p1DS.py`
 
 **Qué hace:** dado un conjunto de rutas (algunas con parámetros como `/user/:id`) y una lista de transiciones, imprime el contenido asociado a cada transición.
 
