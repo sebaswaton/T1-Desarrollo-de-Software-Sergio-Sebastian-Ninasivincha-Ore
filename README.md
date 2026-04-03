@@ -7,6 +7,17 @@ Este repositorio contiene **dos programas en Python**:
 
 ---
 
+## Archivos de entrada (input)
+
+Para ejecutar y probar los programas, se utilizan **archivos `.txt` de entrada**:
+
+- `input1.txt`
+- `input2.txt`
+
+Coloca estos archivos en el **mismo directorio** que `p1DS.py` y `p2DS.py` (o ajusta las rutas dentro del código si corresponde).
+
+---
+
 ## 1) Simulador de enrutamiento (SPA Router) — `p1DS.py`
 
 **Qué hace:** dado un conjunto de rutas (algunas con parámetros como `/user/:id`) y una lista de transiciones, imprime el contenido asociado a cada transición.
