@@ -28,7 +28,7 @@ Coloca estos archivos en el **mismo directorio** que `p1DS.py` y `p2DS.py` (o aj
 
 **Cómo ejecutar:**
 ```bash
-python p1DS.py
+python p1DS.py < input1.txt
 ```
 
 ---
@@ -42,5 +42,5 @@ python p1DS.py
 
 **Cómo ejecutar:**
 ```bash
-python p2DS.py
+python p2DS.py < input2.txt
 ```
