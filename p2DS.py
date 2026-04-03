@@ -1,49 +1,53 @@
 from collections import defaultdict
 import sys
 
-def solve():
-    data = sys.stdin.read().split()
+def resolver():
+    datos = sys.stdin.read().split()
 
-    if not data:
+    if not datos:
         return
 
-    N = int(data[0])
-    M = int(data[1])
-    S = int(data[2])
+    N = int(datos[0])  # número de socios
+    M = int(datos[1])  # número de terminales
+    S = int(datos[2])  # número de registros
 
     idx = 3
-    terminal_to_partner = {}
+    terminal_a_socio = {}
 
+    # Asociar cada terminal con su socio
     for _ in range(M):
-        p = int(data[idx])
-        t = int(data[idx + 1])
-        terminal_to_partner[t] = p
+        s = int(datos[idx])
+        t = int(datos[idx + 1])
+        terminal_a_socio[t] = s
         idx += 2
 
-    partner_clients = [defaultdict(int) for _ in range(N + 1)]
+    # Lista de diccionarios: cuenta clientes por socio
+    clientes_por_socio = [defaultdict(int) for _ in range(N + 1)]
 
+    # Procesar registros
     for _ in range(S):
-        c = int(data[idx])
-        t = int(data[idx + 1])
+        c = int(datos[idx])      # cliente
+        t = int(datos[idx + 1])  # terminal
         idx += 2
 
-        if t in terminal_to_partner:
-            partner = terminal_to_partner[t]
-            partner_clients[partner][c] += 1
+        if t in terminal_a_socio:
+            socio = terminal_a_socio[t]
+            clientes_por_socio[socio][c] += 1
 
-    for partner in range(1, N + 1):
-        if not partner_clients[partner]:
-            print(partner, -1)
+    # Resultado
+    for socio in range(1, N + 1):
+        if not clientes_por_socio[socio]:
+            print(socio, -1)
         else:
-            best_client = -1
-            best_count = -1
+            mejor_cliente = -1
+            mejor_conteo = -1
 
-            for client, count in partner_clients[partner].items():
-                if count > best_count or (count == best_count and client < best_client):
-                    best_count = count
-                    best_client = client
+            for cliente, conteo in clientes_por_socio[socio].items():
+                if conteo > mejor_conteo or (conteo == mejor_conteo and cliente < mejor_cliente):
+                    mejor_conteo = conteo
+                    mejor_cliente = cliente
 
-            print(partner, best_client)
+            print(socio, mejor_cliente)
 
 if __name__ == "__main__":
-    solve()
+    resolver()
