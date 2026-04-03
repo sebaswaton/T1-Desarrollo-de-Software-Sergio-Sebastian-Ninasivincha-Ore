@@ -7,27 +7,24 @@ def resolver():
     if not datos:
         return
 
-    N = int(datos[0])  # número de socios
-    M = int(datos[1])  # número de terminales
-    S = int(datos[2])  # número de registros
+    N = int(datos[0])  
+    M = int(datos[1])   
+    S = int(datos[2])  
 
     idx = 3
     terminal_a_socio = {}
 
-    # Asociar cada terminal con su socio
     for _ in range(M):
         s = int(datos[idx])
         t = int(datos[idx + 1])
         terminal_a_socio[t] = s
         idx += 2
 
-    # Lista de diccionarios: cuenta clientes por socio
     clientes_por_socio = [defaultdict(int) for _ in range(N + 1)]
 
-    # Procesar registros
     for _ in range(S):
-        c = int(datos[idx])      # cliente
-        t = int(datos[idx + 1])  # terminal
+        c = int(datos[idx])      
+        t = int(datos[idx + 1])  
         idx += 2
 
         if t in terminal_a_socio:
