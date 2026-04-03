@@ -2,7 +2,7 @@
 
 Este repositorio contiene **dos programas en Python**:
 
-- `p1DS.py`: solución del **Problema 1 (Simulador de enrutamiento SPA)**.
+- `p1DS.py`: solución del **Problema 1 (Simulador de enrutamiento)**.
 - `p2DS.py`: solución del **Problema 2 (Cliente más fiel por socio)**.
 
 ---
